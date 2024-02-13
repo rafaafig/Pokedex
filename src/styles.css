@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import './css-config/reset.css';
+
+html {
+  background-color: dimgray;
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}

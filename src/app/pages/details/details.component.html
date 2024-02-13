@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<main>
+  <section class="pokemon__name">
+
+    <h1 [ngStyle]="pokemons.types[0] | nameColor">{{ pokemons.name }}</h1>
+
+  </section>
+
+  <section class="pokemon__details">
+
+    <section class="pokemon_id">
+      <h3>Pokemon ID</h3>
+      <p>{{ pokemons.id }}</p>
+      
+    </section>
+
+    <div class="types-section">
+      <h3>Types</h3>
+      <!-- Display title "Types" only once -->
+      <div class="types-container">
+        <div *ngFor="let type of pokemons.types" class="type" [ngStyle]="type | typeColorBackGround">{{ type }}</div>
+      </div>
+    </div>
+
+    <section class="pokemon_stats">
+      <h3>Stats</h3>
+      <p>Height: {{ pokemons.height }} m</p>
+      <p>Weight: {{ pokemons.weight }} kg</p>
+    </section>
+
+
+    <section class="img_countainer">
+      <img [src]="getImageUrl(pokemons.id)" alt="Pokemon Image">
+    </section>
+
+  </section>
+
+    <a [routerLink]="['']" class="btn">
+      Back
+    </a>
+
+</main>

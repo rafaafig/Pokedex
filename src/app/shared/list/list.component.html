@@ -1,0 +1,20 @@
+<app-searchbar (searchValueChange)="searchPokemonList($event)"></app-searchbar>
+
+<div class="pokemon-container">
+  <div class="pokemon-card" *ngFor="let pokemon of pokemons" (click)="redirectToDetails(pokemon.id)">
+    <img [src]="getImageUrl(pokemon.id)" alt="Pokemon Image">
+    <h2 [ngStyle]="pokemon.types[0] | nameColor">{{ pokemon.name }}</h2>
+    <h3>Pokemon Id: <span [ngStyle]="pokemon.id | italId">{{ pokemon.id }}</span></h3>
+
+    <div class="types-section">
+      <div class="types-container">
+        <div *ngFor="let type of pokemon.types" class="type" [ngStyle]="type | typeColorBackGround">{{ type }}</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="button-container" [ngClass]="{'show': showLoadMoreButton}">
+    <button class="button" (click)="loadMorePokemons()">Load More</button>
+  </div>
+</div>
+

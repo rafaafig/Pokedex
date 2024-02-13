@@ -40,3 +40,12 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+.vs/Pokedex/config/applicationhost.config
+.vs/slnx.sqlite
+.vs/ProjectSettings.json
+.vs/Pokedex/v17/.wsuo
+.vs/Pokedex/FileContentIndex/f6c5c487-c953-4716-b3bd-5493c35b9e26.vsidx
+.vs/Pokedex/FileContentIndex/dc8beead-a39b-4574-8d2d-c81c53a51a0b.vsidx
+.vs/Pokedex/FileContentIndex/8d179748-a686-444b-827e-719b7b965260.vsidx
+.vs/Pokedex/FileContentIndex/142278a4-af02-4ed5-87ac-129432c705ca.vsidx
+.vs/Pokedex/FileContentIndex/1071cb2c-0b3e-4539-b8d6-9b447b85f5ab.vsidx

@@ -34,7 +34,6 @@ export class ApiPokemonService {
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
   }
 
-
   private favoritePokemon: Pokemon[] = [];
 
   addFavoritePokemon(pokemon: Pokemon): void {
@@ -49,13 +48,6 @@ export class ApiPokemonService {
     const index = this.favoritePokemon.findIndex(p => p.id === pokemon.id);
     if (index !== -1) {
       this.favoritePokemon.splice(index, 1);
-    }
-  }
-
-  updateFavoritePokemonInLocal(pokemon: Pokemon): void {
-    const index = this.favoritePokemon.findIndex(p => p.id === pokemon.id);
-    if (index !== -1) {
-      this.favoritePokemon[index] = pokemon;
     }
   }
 

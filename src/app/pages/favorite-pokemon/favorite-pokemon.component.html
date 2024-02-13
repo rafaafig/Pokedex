@@ -7,7 +7,7 @@
     <!-- Existing login area -->
 
     <h1>Choose a Pokémon</h1>
-   
+
     <div class="pokemon-container">
       <div class="pokemon-card" *ngFor="let pokemon of pokemons" (click)="addFavoritePokemon(pokemon)">
         <img [src]="getImageUrl(pokemon.id)" alt="Pokemon Image">
@@ -20,17 +20,22 @@
     <div *ngFor="let pokemon of favoritePokemon">
       <p>{{ pokemon.name }}</p>
       <button (click)="deleteFavoritePokemon(pokemon)">Delete</button>
-      <button (click)="updateFavoritePokemon(pokemon)">Update</button>
-      <input type="text" [(ngModel)]="newName" placeholder="New name">
-      <button (click)="saveNewName()">Save</button>
+      <button (click)="updateFavoritePokemonInLocal(pokemon, pokemon.name)">Update</button>
+      <input type="text" [(ngModel)]="nwName" placeholder="New name">
+      <button (click)="saveFav()">Save</button>
     </div>
 
     <h2>Add New Pokémon</h2>
     <div>
-      <input type="number" [(ngModel)]="newPokemonId" placeholder="ID">
-      <input type="text" [(ngModel)]="newName" placeholder="Name">
-      <button (click)="addNewPokemon()">Add</button>
+      <label for="newPokemonId">Pokemon ID:</label>
+      <input type="text" id="newPokemonId" [(ngModel)]="newPokemonId">
+      <br>
+      <label for="newName">Name:</label>
+      <input type="text" id="newName" [(ngModel)]="newName">
+      <br>
+      <button (click)="addNewPokemon()">Add Pokémon</button>
     </div>
+
 
   </div>
 

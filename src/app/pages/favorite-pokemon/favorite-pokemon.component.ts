@@ -13,6 +13,7 @@ export class FavoritePokemonComponent implements OnInit {
   favoritePokemon: Pokemon[] = [];
   newName: string = '';
   newPokemonId: number = 0;
+  nwName: string = '';
   
 
   constructor(
@@ -38,7 +39,7 @@ export class FavoritePokemonComponent implements OnInit {
     this.favPokeService.addFavoritePokemon(pokemon);
     this.favoritePokemon = this.favPokeService.getAllFavoritePokemon();
     this.scrollToBottom();
-    this.saveNewName();
+    this.saveFav();
   }
 
   scrollToBottom(): void {
@@ -53,12 +54,8 @@ export class FavoritePokemonComponent implements OnInit {
     this.favoritePokemon = this.favPokeService.getAllFavoritePokemon();
   }
 
-  updateFavoritePokemon(pokemon: Pokemon): void {
-    this.newName = '';
-    this.newName = pokemon.name;
-  }
 
-  saveNewName(): void {
+  saveFav(): void {
     localStorage.setItem('favoritePokemon', JSON.stringify(this.favoritePokemon));
   }
 
@@ -80,4 +77,15 @@ export class FavoritePokemonComponent implements OnInit {
       console.log('Please provide ID and name for the new Pokémon.');
     }
   }
+
+  updateFavoritePokemonInLocal(pokemon: Pokemon, nwName: string): void {
+    const index = this.favoritePokemon.findIndex(p => p.id === pokemon.id);
+    if (index !== -1) {
+      this.favoritePokemon[index].name = nwName;
+      // Save the changes to local storage
+      this.saveFav();
+    }
+  }
+
+
 }

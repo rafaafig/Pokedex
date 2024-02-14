@@ -10,3 +10,10 @@ main {
   margin: 0 auto;
   box-sizing: border-box;
 }
+
+body {
+  position: relative;
+  background-image: url('/../../assets/bg.jpg');
+}
+
+

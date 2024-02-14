@@ -19,7 +19,7 @@
     <br />
     <app-searchbar (searchValueChange)="searchPokemonList($event)"></app-searchbar>
     <br />
-    <h2>Favorite Pokémon</h2>
+    <h3>Favorite Pokémon</h3>
     <div class="pokemonfav-container" *ngFor="let pokemon of favoritePokemon">
       <img [src]="getImageUrl(pokemon.id)" alt="Pokemon Image">
       <h2 [ngStyle]="pokemon.types[0] | nameColor">{{ pokemon.name }}</h2>
@@ -27,7 +27,7 @@
       <button (click)="deleteFavoritePokemon(pokemon)">Delete</button>
     </div>
 
-    <h2>Add New Pokémon</h2>
+    <h3>Add New Pokémon</h3>
     <div>
       <label for="newPokemonId">Pokemon ID:</label>
       <input type="text" id="newPokemonId" [(ngModel)]="newPokemonId">

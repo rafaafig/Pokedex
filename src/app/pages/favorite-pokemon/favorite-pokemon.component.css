@@ -11,6 +11,7 @@
     margin-top: 20px;
     margin-bottom: 10px;
     color: #333;
+    text-shadow: -1px -1px 4px grey, 1px -1px 4px grey, -1px 1px 4px grey, 1px 1px 4px grey;
   }
 
   .private-area ul {
@@ -91,6 +92,9 @@
   border-radius: 10px;
   padding: 20px;
   margin: 10px;
+  background-image: url('/../../assets/pkbg.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .pokemon-card h2{
@@ -120,6 +124,9 @@ h1 {
   border-radius: 10px;
   text-align: center;
   justify-content: center;
+  background-image: url('/../../assets/favbg.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
   
@@ -134,5 +141,14 @@ h1 {
   .pokemonfav-container h2 {
     margin-top: 10px;
     font-size: 18px;
-    color: #333; 
+    color: #333;
+
   }
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: forestgreen;
+  font-weight: bold;
+  font-size: 18px;
+}

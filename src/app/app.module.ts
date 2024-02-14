@@ -8,9 +8,11 @@ import { PagesModule } from './pages/pages.module';
 import { HttpInterceptorInterceptor } from './interceptors/http-interceptor.interceptor';
 
 
+
 @NgModule({
   declarations: [
     AppComponent
+  
   ],
   imports: [
     BrowserModule,

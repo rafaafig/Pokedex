@@ -7,6 +7,8 @@ import { RoutingModule } from './routing-module';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { FavoritePokemonComponent } from './favorite-pokemon/favorite-pokemon.component';
+import { ZoomImgDirective } from '../directives/zoom-img.directive';
+import { DirectivesModule } from '../directives/directives.module';
 
 
 
@@ -16,12 +18,15 @@ import { FavoritePokemonComponent } from './favorite-pokemon/favorite-pokemon.co
     DetailsComponent,
     LoginAreaComponent,
     FavoritePokemonComponent
+    
   ],
   imports: [
     CommonModule,
     RoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    DirectivesModule
+    
   ],
   exports: [
     DetailsComponent,

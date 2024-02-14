@@ -17,7 +17,7 @@
 
     <div class="types-section">
       <h3>Types</h3>
-      <!-- Display title "Types" only once -->
+     
       <div class="types-container">
         <div *ngFor="let type of pokemons.types" class="type" [ngStyle]="type | typeColorBackGround">{{ type }}</div>
       </div>
@@ -36,7 +36,7 @@
 
     <button (click)="toggleUpdateForm()">Update Pokemon</button>
 
-    <!-- Update Form -->
+   
     <form *ngIf="showUpdateForm" (ngSubmit)="submitUpdateForm()">
       <input type="text" [(ngModel)]="updatedPokemonName" name="updatedPokemonName" placeholder="Enter updated name">
       <button type="submit">Save</button>
@@ -45,15 +45,15 @@
     <br/>
     <br/>
 
-    <!-- Delete Pokemon Button -->
+ 
     <button (click)="deletePokemon()">Delete Pokemon</button>
 
   </section>
 
   
 
-    <a [routerLink]="['']" class="btn">
-      Back
-    </a>
+
+  <button class="btn" (click)="goBack()">Go Back</button>
+    
 
 </main>

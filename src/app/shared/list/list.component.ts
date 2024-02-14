@@ -22,6 +22,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadMorePokemons();
+
   }
 
   getImageUrl(id: number): string {

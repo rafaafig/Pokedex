@@ -68,6 +68,11 @@ export class DetailsComponent implements OnInit {
   selectPokemon(pokemon: Pokemon) {
     this.selectedPokemon = pokemon;
   }
+
+  goBack() {
+    this.router.navigate(['../../'], { relativeTo: this.route });
+  }
+
 }
 
 

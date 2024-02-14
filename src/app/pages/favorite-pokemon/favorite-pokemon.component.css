@@ -11,7 +11,8 @@
     margin-top: 20px;
     margin-bottom: 10px;
     color: #333;
-    text-shadow: -1px -1px 4px grey, 1px -1px 4px grey, -1px 1px 4px grey, 1px 1px 4px grey;
+    text-shadow: -1px -1px 4px blue, 1px -1px 4px red, -1px 1px 4px black, 1px 1px 4px white;
+
   }
 
   .private-area ul {

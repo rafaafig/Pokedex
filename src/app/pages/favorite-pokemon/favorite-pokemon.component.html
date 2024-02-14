@@ -9,17 +9,21 @@
     <h1>Choose a Pokémon</h1>
 
     <div class="pokemon-container">
-      <div class="pokemon-card" *ngFor="let pokemon of pokemons" (click)="addFavoritePokemon(pokemon)">
+      <div class="pokemon-card" *ngFor="let pokemon of pokemons">
         <img [src]="getImageUrl(pokemon.id)" alt="Pokemon Image">
         <h2 [ngStyle]="pokemon.types[0] | nameColor">{{ pokemon.name }}</h2>
+        <br />
+        <button (click)="addFavoritePokemon(pokemon)">Add</button>
       </div>
     </div>
     <br />
     <app-searchbar (searchValueChange)="searchPokemonList($event)"></app-searchbar>
     <br />
     <h2>Favorite Pokémon</h2>
-    <div *ngFor="let pokemon of favoritePokemon">
-      <p>{{ pokemon.name }}</p>
+    <div class="pokemonfav-container" *ngFor="let pokemon of favoritePokemon">
+      <img [src]="getImageUrl(pokemon.id)" alt="Pokemon Image">
+      <h2 [ngStyle]="pokemon.types[0] | nameColor">{{ pokemon.name }}</h2>
+      <br/>
       <button (click)="deleteFavoritePokemon(pokemon)">Delete</button>
     </div>
 

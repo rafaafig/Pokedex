@@ -11,14 +11,17 @@
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #0056b3;
-    color: #fff;
-    font-size: 16px;
+    background-color: rgb(255, 206, 49);
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 10px;
   }
 
     .dashboard button:hover {
-      background-color: #0056b3;
+      background-color: black;
+      color: red;
+      
     }

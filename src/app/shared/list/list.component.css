@@ -65,9 +65,9 @@ body {
 }
 
 .button {
-  background-color: yellow;
+  background-color: rgb(255, 206, 49);
   color: blue;
-  padding: 10px 10px; 
+  padding: 10px 10px;
   border: none;
   border-radius: 10px;
   font-size: 18px;
@@ -75,7 +75,8 @@ body {
 }
 
   .button:hover {
-    background-color: gold;
+    background-color: black;
+    color: red;
   }
 
 

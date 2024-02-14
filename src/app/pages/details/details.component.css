@@ -55,7 +55,7 @@ main {
 
 .btn {
   padding: 15px 30px;
-  background-color: #ffcc00;
+  background-color: rgb(255, 206, 49);
   color: blue;
   border: none;
   border-radius: 5px;
@@ -64,10 +64,10 @@ main {
   transition: background-color 0.3s ease;
 }
 
-  .btn:hover {
-    background-color: #ffdb4d;
-    color: red;
-  }
+.btn:hover {
+  background-color: black;
+  color: red;
+}
 
 .types-section {
   margin-top: 20px;

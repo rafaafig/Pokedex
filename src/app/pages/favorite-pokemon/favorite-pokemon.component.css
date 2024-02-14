@@ -26,15 +26,17 @@
     padding: 8px 12px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: rgb(255, 206, 49);
+    color: blue;
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
 
     .private-area button:hover {
-      background-color: #0056b3;
+      background-color: black;
+      color: red;
+    
     }
 
   .private-area input[type="number"],
@@ -110,3 +112,27 @@ h1 {
   font-size: 34px;
 }
 
+.pokemonfav-container {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+  
+  .pokemonfav-container img {
+    width: 95px; 
+    height: 95px; 
+    display: block;
+    margin: 0 auto;
+  }
+
+  
+  .pokemonfav-container h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333; 
+  }

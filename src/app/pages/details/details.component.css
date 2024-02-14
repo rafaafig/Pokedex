@@ -113,3 +113,19 @@ main {
     margin-bottom: 10px;
   }
 
+button {
+  padding: 5px 5px;
+  background-color: #ffcc00;
+  color: blue;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+  button:hover {
+    background-color: #ffdb4d;
+    color: red;
+  }

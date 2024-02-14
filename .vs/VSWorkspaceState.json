@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\interceptors",
+    "\\src\\app\\pages",
+    "\\src\\app\\pages\\details",
+    "\\src\\app\\pages\\favorite-pokemon",
+    "\\src\\app\\service"
+  ],
+  "PreviewInSolutionExplorer": false
+}

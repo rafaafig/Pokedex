@@ -8,28 +8,25 @@ export class FavPokeService {
 
   private favPoke: Pokemon[] = [];
 
+  private readonly FAVORITE_KEY = 'favoritePokemon';
+
   constructor() { }
 
+
+  getFavoritePokemon(): Pokemon[] {
+    const favoritesJson = localStorage.getItem(this.FAVORITE_KEY);
+    return favoritesJson ? JSON.parse(favoritesJson) : [];
+  }
+
   addFavoritePokemon(pokemon: Pokemon): void {
-    this.favPoke.push(pokemon);
+    const favorites = this.getFavoritePokemon();
+    favorites.push(pokemon);
+    localStorage.setItem(this.FAVORITE_KEY, JSON.stringify(favorites));
   }
 
   deleteFavoritePokemon(pokemon: Pokemon): void {
-    const index = this.favPoke.findIndex(p => p.id === pokemon.id);
-    if (index !== -1) {
-      this.favPoke.splice(index, 1);
-    }
-  }
-
-  updateFavoritePokemon(updatedPokemon: Pokemon): void {
-    const index = this.favPoke.findIndex(p => p.id === updatedPokemon.id);
-    if (index !== -1) {
-      this.favPoke[index] = updatedPokemon;
-    }
-  }
-
-  getAllFavoritePokemon(): Pokemon[] {
-    return this.favPoke;
+    let favorites = this.getFavoritePokemon();
+    favorites = favorites.filter(p => p.id !== pokemon.id);
+    localStorage.setItem(this.FAVORITE_KEY, JSON.stringify(favorites));
   }
 }
-

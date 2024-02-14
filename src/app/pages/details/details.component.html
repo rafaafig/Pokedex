@@ -12,7 +12,7 @@
     <section class="pokemon_id">
       <h3>Pokemon ID</h3>
       <p>{{ pokemons.id }}</p>
-      
+
     </section>
 
     <div class="types-section">
@@ -34,7 +34,23 @@
       <img [src]="getImageUrl(pokemons.id)" alt="Pokemon Image">
     </section>
 
+    <button (click)="toggleUpdateForm()">Update Pokemon</button>
+
+    <!-- Update Form -->
+    <form *ngIf="showUpdateForm" (ngSubmit)="submitUpdateForm()">
+      <input type="text" [(ngModel)]="updatedPokemonName" name="updatedPokemonName" placeholder="Enter updated name">
+      <button type="submit">Save</button>
+
+    </form>
+    <br/>
+    <br/>
+
+    <!-- Delete Pokemon Button -->
+    <button (click)="deletePokemon()">Delete Pokemon</button>
+
   </section>
+
+  
 
     <a [routerLink]="['']" class="btn">
       Back

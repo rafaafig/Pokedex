@@ -1,11 +1,11 @@
 <app-header></app-header>
 
 <app-dashboard></app-dashboard>
+
 <main>
-
+  <app-searchbar (searchValueChange)="searchPokemonList($event)"></app-searchbar>
+  <br/>
   <div class="private-area">
-    <!-- Existing login area -->
-
     <h1>Choose a Pokémon</h1>
 
     <div class="pokemon-container">
@@ -14,15 +14,13 @@
         <h2 [ngStyle]="pokemon.types[0] | nameColor">{{ pokemon.name }}</h2>
       </div>
     </div>
-
-
+    <br />
+    <app-searchbar (searchValueChange)="searchPokemonList($event)"></app-searchbar>
+    <br />
     <h2>Favorite Pokémon</h2>
     <div *ngFor="let pokemon of favoritePokemon">
       <p>{{ pokemon.name }}</p>
       <button (click)="deleteFavoritePokemon(pokemon)">Delete</button>
-      <button (click)="updateFavoritePokemonInLocal(pokemon, pokemon.name)">Update</button>
-      <input type="text" [(ngModel)]="nwName" placeholder="New name">
-      <button (click)="saveFav()">Save</button>
     </div>
 
     <h2>Add New Pokémon</h2>
@@ -33,10 +31,8 @@
       <label for="newName">Name:</label>
       <input type="text" id="newName" [(ngModel)]="newName">
       <br>
-      <button (click)="addNewPokemon()">Add Pokémon</button>
+      <button (click)="addPokemon()">Add Pokémon</button>
     </div>
-
-
   </div>
-
 </main>
+

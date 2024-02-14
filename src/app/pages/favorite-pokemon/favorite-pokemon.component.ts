@@ -35,11 +35,18 @@ export class FavoritePokemonComponent implements OnInit {
     return this.apiService.getPokeImage(id);
   }
 
-  addFavoritePokemon(pokemon: Pokemon): void {
-    this.favPokeService.addFavoritePokemon(pokemon);
-    this.favoritePokemon = this.favPokeService.getAllFavoritePokemon();
-    this.scrollToBottom();
-    this.saveFav();
+
+  public searchPokemonList(searchValue: string): void {
+    if (searchValue.trim() !== '') {
+      this.apiService.listAllPokemon().subscribe(
+        (pokemons: Pokemon[]) => {
+          const filteredPokemons = pokemons.filter(pokemon =>
+            pokemon.name.toLowerCase().includes(searchValue.toLowerCase())
+          );
+          this.pokemons = filteredPokemons;
+        }
+      );
+    }
   }
 
   scrollToBottom(): void {
@@ -49,43 +56,41 @@ export class FavoritePokemonComponent implements OnInit {
     });
   }
 
-  deleteFavoritePokemon(pokemon: Pokemon): void {
-    this.favPokeService.deleteFavoritePokemon(pokemon);
-    this.favoritePokemon = this.favPokeService.getAllFavoritePokemon();
-  }
-
-
-  saveFav(): void {
-    localStorage.setItem('favoritePokemon', JSON.stringify(this.favoritePokemon));
-  }
 
   loadFavoritePokemon(): void {
-    const savedFavoritePokemon = localStorage.getItem('favoritePokemon');
-    if (savedFavoritePokemon) {
-      this.favoritePokemon = JSON.parse(savedFavoritePokemon);
-    }
+    this.favoritePokemon = this.favPokeService.getFavoritePokemon();
   }
 
-  addNewPokemon(): void {
-    if (this.newPokemonId && this.newName) {
-      this.apiService.addPokemon(this.newPokemonId, this.newName).subscribe(newPokemon => {
-        this.favPokeService.addFavoritePokemon(newPokemon);
-        this.favoritePokemon = this.favPokeService.getAllFavoritePokemon();
-        console.log('New Pokémon added:', newPokemon);
-      });
-    } else {
-      console.log('Please provide ID and name for the new Pokémon.');
-    }
+  addFavoritePokemon(pokemon: Pokemon): void {
+    this.favPokeService.addFavoritePokemon(pokemon);
+    this.loadFavoritePokemon();
+    this.scrollToBottom();
   }
 
-  updateFavoritePokemonInLocal(pokemon: Pokemon, nwName: string): void {
-    const index = this.favoritePokemon.findIndex(p => p.id === pokemon.id);
-    if (index !== -1) {
-      this.favoritePokemon[index].name = nwName;
-      // Save the changes to local storage
-      this.saveFav();
-    }
+  deleteFavoritePokemon(pokemon: Pokemon): void {
+    this.favPokeService.deleteFavoritePokemon(pokemon);
+    this.loadFavoritePokemon();
+  }
+
+  isFavorite(pokemon: Pokemon): boolean {
+    return this.favoritePokemon.some(fav => fav.id === pokemon.id);
+    
   }
 
 
+  addPokemon() {
+    const newPokemon: Pokemon = {
+      id: Math.floor(Math.random() * 1000),
+      name: 'New Pokemon',
+      height: 0,
+      weight: 0,
+      types: [],
+      family: ''
+    };
+    this.apiService.addPokemonAPI(newPokemon.id, newPokemon.name).subscribe(() => {
+
+    }, error => {
+
+    });
+  }
 }
